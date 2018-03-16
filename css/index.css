@@ -1,0 +1,81 @@
+@keyframes example {
+    0% {
+    	-webkit-transform:rotateY(45deg);
+  		-moz-transform:rotateY(40deg);
+	  	-ms-transform:rotateY(40deg);
+	  	-o-transform:rotateY(40deg);
+	  	transform:rotateY(40deg);
+	  }
+    50% {
+    	-webkit-transform:rotateY(90deg);
+  		-moz-transform:rotateY(90deg);
+	  	-ms-transform:rotateY(90deg);
+	  	-o-transform:rotateY(90deg);
+	  	transform:rotateY(90deg);
+	  }
+	100% {
+    	-webkit-transform:rotateY(180deg);
+  		-moz-transform:rotateY(180deg);
+	  	-ms-transform:rotateY(180deg);
+	  	-o-transform:rotateY(180deg);
+	  	transform:rotateY(180deg);
+	  }
+}
+.container
+{
+	width:100%;
+	display: inline;
+}
+
+.coin
+{
+	width:33%;
+	height:20%;
+	float: left;
+}
+
+.coin img
+{
+	width:100%;
+	border-radius: 50%;
+}
+
+.flipped
+{
+  animation-name: example;
+  animation-duration: 1s;
+}
+.front, .back
+{
+	backface-visibility: hidden;
+	position:absolute;
+}
+.front{
+  animation: flip-head 1s linear 0s infinite alternate;
+}
+.back{
+  animation: flip-tail 1s linear 0s infinite alternate;
+}
+
+@keyframes flip-head {
+  0%, 100% { transform: rotateX(0deg); }
+  50% { transform: rotateX(180deg); }
+}
+
+@keyframes flip-tail {
+  0%, 100% { transform: rotateX(180deg); }
+  50% { transform: rotateX(0deg); }
+}
+
+label > div > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+label > div > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+label > div > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:10px solid #f00;
+  background-color: #3E5057;
+}
