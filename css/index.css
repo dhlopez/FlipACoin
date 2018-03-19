@@ -1,26 +1,13 @@
-@keyframes example {
-    0% {
-    	-webkit-transform:rotateY(45deg);
-  		-moz-transform:rotateY(40deg);
-	  	-ms-transform:rotateY(40deg);
-	  	-o-transform:rotateY(40deg);
-	  	transform:rotateY(40deg);
-	  }
-    50% {
-    	-webkit-transform:rotateY(90deg);
-  		-moz-transform:rotateY(90deg);
-	  	-ms-transform:rotateY(90deg);
-	  	-o-transform:rotateY(90deg);
-	  	transform:rotateY(90deg);
-	  }
-	100% {
-    	-webkit-transform:rotateY(180deg);
-  		-moz-transform:rotateY(180deg);
-	  	-ms-transform:rotateY(180deg);
-	  	-o-transform:rotateY(180deg);
-	  	transform:rotateY(180deg);
-	  }
+:root
+{
+	--animation-time: 2s;
 }
+
+#red
+{
+	animation: flicker var(--animation-time) ease alternate infinite;
+}
+
 .container
 {
 	width:100%;
@@ -40,21 +27,27 @@
 	border-radius: 50%;
 }
 
-.flipped
-{
-  animation-name: example;
-  animation-duration: 1s;
-}
 .front, .back
 {
 	backface-visibility: hidden;
 	position:absolute;
 }
 .front{
-  animation: flip-head 1s linear 0s infinite alternate;
+  animation: flip-head 2s linear 0s 4 alternate;
 }
 .back{
-  animation: flip-tail 1s linear 0s infinite alternate;
+  animation: flip-tail 2s linear 0s 4 alternate;
+  display:block;
+}
+
+.hide
+{
+	display:none;
+}
+
+.show
+{
+	display:block;
 }
 
 @keyframes flip-head {
