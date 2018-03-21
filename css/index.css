@@ -1,13 +1,3 @@
-:root
-{
-	--animation-time: 2s;
-}
-
-#red
-{
-	animation: flicker var(--animation-time) ease alternate infinite;
-}
-
 .container
 {
 	width:100%;
@@ -18,13 +8,39 @@
 {
 	width:33%;
 	height:20%;
-	float: left;
+	float:left;
+}
+
+#coins
+{
+	position:relative;
+	/*float:left;*/
+	width: 160px;
+  	height: 160px;
+  	z-index: 1;
+  	perspective: 1000;
+}
+
+#backside, #frontside
+{
+	position: absolute;
+	width: 100%;
+  	height: 100%;
+  	backface-visibility: hidden;
+  	/*z-index:2;*/
+}
+
+#backside
+{
+  	display: block;
+  	/*z-index:1;*/
 }
 
 .coin img
 {
 	width:100%;
 	border-radius: 50%;
+	float:block;
 }
 
 .front, .back

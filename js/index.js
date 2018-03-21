@@ -34,3 +34,9 @@ function result()
     }
 }
 
+function transit(){
+	$('.bothCoins').transition({
+	  //perspective: '50px',
+	  rotateY: '+=360deg'
+	});
+}

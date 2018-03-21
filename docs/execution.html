@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <title>title</title>
     <script src="../js/index.js" type="text/javascript"></script>
+    <script src='../node_modules/jquery/dist/jquery.js'></script>
+    <script src='../node_modules/jquery.transit/jquery.transit.js'></script>
     <link rel="stylesheet" type="text/css" href="../css/index.css">
   </head>
   <body>
-  	<div id="coins" class="bothCoins" onclick="flip()">
+  	<div id="coins" class="bothCoins" onclick="transit()"> <!---before it was flip-->
 	  	<div id="frontside">
 	      <img id="imgfront" src="../img/head.jpg">
 	    </div>
 	    <div id="backside" >
-	      <img id="imgback" src="../img/tails.jpg" class="hide">
+	      <img id="imgback" src="../img/tails.jpg"><!---deleted class hide-->
 	    </div>
-	</div>
+	   </div>
   </body>
 </html>
