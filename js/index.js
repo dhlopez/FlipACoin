@@ -35,8 +35,51 @@ function result()
 }
 
 function transit(){
-	$('.bothCoins').transition({
-	  //perspective: '50px',
-	  rotateY: '+=360deg'
-	});
+	var a = 1440;
+
+	if(Math.floor(Math.random() * 2) == 0)
+	{
+		$('#backside').show();
+		$('#frontside').show();
+		$('#frontside').transition({
+	  	  //perspective: '50px',
+		  rotateY: '+='+a+'deg',
+		  duration: 500,
+		  ease:'out'
+	    }, function(e)
+		  {
+			$('#backside').hide();
+		  });
+		$('#backside').transition({
+		  //perspective: '50px',
+		  rotateY: '+='+a+'deg',
+		  delay:150,
+		  duration: 500,
+		  ease:'out'
+		});
+		console.info('head');
+		
+	}
+	else
+	{
+		$('#backside').show();
+		$('#frontside').show();
+		$('#backside').transition({
+		  //perspective: '50px',
+		  rotateY: '+='+a+'deg',
+		  duration: 500,
+		  ease:'out'}, function(e)
+		  {
+			$('#frontside').hide();
+		  });
+		$('#frontside').transition({
+	  	  //perspective: '50px',
+		  rotateY: '+='+a+'deg',
+		  duration: 500,
+		  delay:150,
+		  ease:'out'
+		});
+		console.info('tail');
+		
+	}
 }
