@@ -1,6 +1,6 @@
 function transit(){
 	var a = 1440;
-	$('#backside').show();
+	//$('#backside').show();
 	$('#frontside').show();
 
 	if(Math.floor(Math.random() * 2) == 0)
